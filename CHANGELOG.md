@@ -2,6 +2,12 @@
 
 Nur Änderungen an der Vorlage selbst. Was in einem eingerichteten PersonalOS passiert, steht dort in den Daily Notes.
 
+## 0.3.0 · 2026-11-05
+
+- Neuer Skill `vault-navigation`: Einstiegspunkte je Fragetyp, Suchreihenfolge (Übersicht, Dateiname, Volltext, Links, Frontmatter), Verlässlichkeit bei Widersprüchen, Antwort mit Fundstelle, Pflege der Übersichtsnotizen.
+- Neuer Skill `vorlage-aktualisieren`: Skills, Werkzeuge und Vorlagen aus dem Remote `vorlage` übernehmen, ohne persönliche Inhalte und ohne AGENTS.md zu überschreiben.
+- README: Abschnitt „Trainieren“ für die ersten Wochen, Installationsprompt prüft die Skills und macht eine Probe-Suche.
+
 ## 0.2.0 · 2026-11-05
 
 - Öffentlich unter `prozesswerkstatt/personal-os`, neue Historie ohne personenbezogene Daten.

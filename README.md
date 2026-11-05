@@ -17,7 +17,8 @@ AGENTS.md            einzige Regeldatei für alle Agenten (CLAUDE.md verweist nu
 06 Archiv/           Abgeschlossenes
 07 Anhänge/          eingebettete Bilder und PDFs
 _vorlagen/           Daily Note, Kundenakte, Person, Entscheidung, Ablauf, Wissensnotiz, Transkript-Auswertung
-.agents/skills/      erststart, transkript-einarbeiten, info-einsortieren, tagesabschluss, ablauf-zu-skill, vault-pruefung
+.agents/skills/      erststart, vault-navigation, transkript-einarbeiten, info-einsortieren, tagesabschluss,
+                     ablauf-zu-skill, vorlage-aktualisieren, vault-pruefung
 tools/               einrichten.sh, sichern.sh, automatisch-sichern.sh
 ```
 
@@ -58,11 +59,11 @@ Richte mir ein PersonalOS aus der Vorlage https://github.com/prozesswerkstatt/pe
 2. Prüfe Git (git --version) und Python 3 (Windows: py --version, Mac: python3 --version). Fehlt etwas, nenn mir den offiziellen Download für mein System und warte, bis ich fertig bin.
 3. Schlag mir einen Speicherort vor: einen Ordner PersonalOS direkt in meinem Benutzerordner (Windows C:\Users\<Name>\PersonalOS, Mac ~/PersonalOS). Nicht unter Desktop oder Dokumente und nicht in einem Ordner, den OneDrive, iCloud oder Dropbox synchronisiert. Warte auf meine Bestätigung.
 4. Klone die Vorlage dorthin und benenne den Remote origin in vorlage um (git remote rename origin vorlage), damit meine Notizen nie in das öffentliche Vorlagen-Repository gelangen.
-5. Führe im neuen Ordner tools/einrichten.sh aus (Windows: bash tools/einrichten.sh in Git Bash).
-6. Lies AGENTS.md und .agents/skills/erststart/SKILL.md vollständig und führe mit mir den Erststart durch. Stell die Fragen einzeln. Prüfe am Ende mit dem Prüfskript, dass keine Platzhalter offen sind.
+5. Führe im neuen Ordner tools/einrichten.sh aus (Windows: bash tools/einrichten.sh in Git Bash). Prüfe danach, dass unter .claude/skills/ alle Skills aus .agents/skills/ liegen (erststart, vault-navigation, transkript-einarbeiten, info-einsortieren, tagesabschluss, ablauf-zu-skill, vorlage-aktualisieren, vault-pruefung).
+6. Lies AGENTS.md, .agents/skills/erststart/SKILL.md und .agents/skills/vault-navigation/SKILL.md vollständig und führe mit mir den Erststart durch. Stell die Fragen einzeln. Prüfe am Ende mit dem Prüfskript, dass keine Platzhalter offen sind. Mach danach eine kurze Probe: Stell dir selbst eine Frage zu dem, was ich gerade erzählt habe, beantworte sie nach vault-navigation mit Fundstelle und zeig mir das Ergebnis.
 7. Prüfe, ob Obsidian installiert ist, nenne sonst den Download, und sag mir, wie ich den Ordner als Vault öffne.
 8. Mach einen ersten Commit. Biete mir an, für die Sicherung ein eigenes, privates GitHub-Repository als origin einzurichten, und zeig mir dafür die Schritte im Browser. Pushe nichts ohne meine Zustimmung. Wenn ich möchte, schalte danach die automatische Sicherung ein (tools/automatisch-sichern.sh an) und prüfe sofort, ob sie eingerichtet ist (Windows: schtasks /Query /TN "PersonalOS Sicherung 0730", Mac: launchctl list | grep personalos).
-9. Gib mir zum Schluss eine kurze Übersicht, was angelegt ist, und sag mir, dass ich künftige Sitzungen direkt im Ordner PersonalOS starte, damit die Regeln aus AGENTS.md automatisch geladen werden.
+9. Gib mir zum Schluss eine kurze Übersicht, was angelegt ist, und erklär mir in wenigen Sätzen, wie ich das System in den ersten Wochen trainiere (Abschnitt „Trainieren“ im README). Sag mir, dass ich künftige Sitzungen direkt im Ordner PersonalOS starte, damit die Regeln aus AGENTS.md und die Skills automatisch geladen werden.
 ```
 
 ## Mit Begleitung einrichten
@@ -90,6 +91,20 @@ Die Inhalte sind auf beiden Systemen gleich. Unterschiede:
 
 `.gitattributes` hält die Zeilenenden auf beiden Systemen gleich. Ohne das würden die Shell-Skripte unter Windows nicht starten.
 
+## Trainieren: so lernt das System dich kennen
+
+Nach dem Erststart weiß der Agent, wer du bist. Dein Fachwissen kommt erst mit der Arbeit dazu. Je mehr echtes Material durch das System läuft, desto besser werden Antworten und Vorschläge.
+
+**In den ersten zwei Wochen**
+
+1. **Jeden Tag mit dem Vault arbeiten.** Claude Code im Ordner PersonalOS starten und die normale Arbeit dort erledigen (Mails vorbereiten, Angebote prüfen, Fragen klären). Am Ende „Tagesabschluss“.
+2. **Gespräche einarbeiten.** Aufnahmen oder Transkripte von Kundenterminen nach `01 Inbox/_eingang/` legen und „arbeite das Transkript ein“ sagen. Kundenakte, Personen und Abläufe füllen sich von selbst.
+3. **Altes Wissen nachholen, ein Stück pro Sitzung.** Einen alten Projektordner, eine Anleitung oder einen Programmstand nach `01 Inbox/_eingang/` kopieren und sagen: „Lies das und leg die Essenz als Referenz ab.“ Ins Vault kommt die Zusammenfassung mit Fundstelle, das Original bleibt draußen.
+4. **Korrigieren statt hinnehmen.** Ist ein Ergebnis falsch, sag es („so nicht, sondern so“). Der Agent legt die Korrektur dort ab, wo sie beim nächsten Mal greift: Schreibstil, Ablauf, Skill oder Entscheidung.
+5. **Wiederkehrendes zum Skill machen.** Läuft ein Ablauf zweimal gleich, „mach daraus einen Skill“ sagen.
+
+**Testen, ob es wirkt:** Frag nach einer Woche etwas, das du nur einmal erzählt hast („Was weiß ich über Kunde X?“, „Wie haben wir Y damals gelöst?“). Die Antwort muss eine Fundstelle nennen. Fehlt sie, „merk dir das“ sagen.
+
 ## Täglicher Gebrauch
 
 | Situation | Satz an den Agenten |
@@ -98,6 +113,8 @@ Die Inhalte sind auf beiden Systemen gleich. Unterschiede:
 | Dokument, Info, Merkposten | „Merk dir das“ oder „sortier die Inbox“ |
 | Ablauf soll automatisch laufen | „Mach daraus einen Skill.“ |
 | Feierabend | „Tagesabschluss.“ |
+| Etwas suchen | „Was weiß ich über …?“, „Wo steht …?“ |
+| Neue Version der Vorlage | „Aktualisiere die Vorlage.“ |
 
 ## Lokales Modell statt Cloud
 

@@ -9,7 +9,7 @@ Dieses Vault ist das Zweite Gehirn von {{NAME}} ({{TAETIGKEIT}}). Es hält Ablä
 ## Bevor du arbeitest
 
 1. Lies `00 Kontext/Über mich.md` (wer, was, wie) und bei Texten zusätzlich `00 Kontext/Schreibstil.md`.
-2. Suche den Ort, an dem die Antwort schon steht, bevor du rätst. Erst lesen, dann antworten.
+2. Suche den Ort, an dem die Antwort schon steht, bevor du rätst. Erst lesen, dann antworten. Wie du dich durch die Dateien bewegst, steht im Skill `vault-navigation`.
 3. Gibt es für die Aufgabe einen Skill (Liste unten), nutze ihn statt frei zu arbeiten.
 
 ## Grundregeln
@@ -63,6 +63,8 @@ Skills liegen unter `.agents/skills/<name>/SKILL.md`. Der spezifischste passende
 | ein Arbeitstag oder eine Session endet | `tagesabschluss` |
 | ein Ablauf sich wiederholt und als Skill festgehalten werden soll | `ablauf-zu-skill` |
 | ein Text nach außen geht oder das Vault nach Änderungen geprüft wird | `vault-pruefung` |
+| Wissen gesucht wird („was weiß ich über …“, „wie haben wir das gelöst“, „wo steht …“) oder eine Aufgabe Kontext braucht | `vault-navigation` |
+| neue Skills, Werkzeuge oder Vorlagen aus der PersonalOS-Vorlage übernommen werden sollen | `vorlage-aktualisieren` |
 
 Neue Skills entstehen mit `ablauf-zu-skill` aus einer Notiz unter `03 Bereiche/Abläufe/`. Ein Skill führt einen Ablauf aus, die Regeln stehen hier.
 
