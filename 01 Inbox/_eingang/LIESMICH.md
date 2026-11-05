@@ -1,0 +1,1 @@
+Rohmaterial zum Einarbeiten: Transkripte, Exporte, Dokumente. Dieser Ordner ist von Git ausgeschlossen, weil hier vertrauliche Unterlagen liegen können. Nach dem Einarbeiten bleibt die Datei hier liegen oder wandert in den Kundenordner außerhalb des Vaults. Ins Vault kommt nur die Essenz mit Quelle.

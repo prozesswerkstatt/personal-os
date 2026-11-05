@@ -1,0 +1,13 @@
+# Gleiche Zeilenenden auf Windows und Mac. Shell-Skripte brauchen LF,
+# sonst bricht bash unter Windows mit "\r: command not found" ab.
+* text=auto eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.xlsx binary
+*.docx binary

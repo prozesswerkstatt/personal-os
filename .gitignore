@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+
+# Obsidian: lokaler Zustand und Plugin-Daten (können Schlüssel enthalten)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+.obsidian/plugins/*/data.json
+.trash/
+
+# KI-Werkzeuge: lokale Sitzungsdaten
+.claude/
+
+# Geheimnisse
+.env
+**/.env
+**/.secrets/
+
+# Rohmaterial bleibt lokal (Transkripte, Verträge, Exporte)
+01 Inbox/_eingang/*
+!01 Inbox/_eingang/LIESMICH.md
+
+# Scratch und große Medien
+tmp/
+**/_input/
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.m4a
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Protokoll der automatischen Sicherung
+tools/sichern.log
