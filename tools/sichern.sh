@@ -19,6 +19,14 @@ else
 fi
 
 if git remote get-url origin >/dev/null 2>&1; then
+  # Erste Sicherung in das eigene Repository: Der Zweig hat noch keinen Upstream
+  # oder zeigt nach dem Klonen noch auf die Vorlage (Remote "vorlage"). Dann nur
+  # nach origin pushen und origin als Upstream setzen. Nie von der Vorlage ziehen.
+  zweig=$(git symbolic-ref --short HEAD)
+  if [ "$(git config "branch.$zweig.remote" || true)" != "origin" ]; then
+    git push -q -u origin HEAD && echo "nach GitHub gesichert (erste Sicherung)"
+    exit $?
+  fi
   if ! git pull --rebase -q; then
     git rebase --abort 2>/dev/null
     echo "KONFLIKT: Der Stand auf GitHub weicht ab. Nichts überschrieben, bitte von Hand klären." >&2

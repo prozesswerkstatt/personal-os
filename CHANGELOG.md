@@ -2,6 +2,11 @@
 
 Nur Änderungen an der Vorlage selbst. Was in einem eingerichteten PersonalOS passiert, steht dort in den Daily Notes.
 
+## 0.3.1 · 2026-11-12
+
+- `tools/sichern.sh`: Die erste Sicherung in das eigene GitHub-Repository klappt jetzt. Nach dem Klonen und `git remote rename origin vorlage` zeigte der Zweig noch auf die Vorlage, das Skript hätte von dort gezogen und dorthin pushen wollen und brach mit einer irreführenden Konflikt-Meldung ab. Jetzt wird bei der ersten Sicherung nach `origin` gepusht und `origin` als Upstream gesetzt.
+- README: Abschnitt „Sicherung“ ergänzt, auf den `tools/einrichten.sh` und `tools/sichern.sh` bereits verwiesen.
+
 ## 0.3.0 · 2026-11-05
 
 - Neuer Skill `vault-navigation`: Einstiegspunkte je Fragetyp, Suchreihenfolge (Übersicht, Dateiname, Volltext, Links, Frontmatter), Verlässlichkeit bei Widersprüchen, Antwort mit Fundstelle, Pflege der Übersichtsnotizen.

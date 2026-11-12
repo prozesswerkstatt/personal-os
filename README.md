@@ -91,6 +91,17 @@ Die Inhalte sind auf beiden Systemen gleich. Unterschiede:
 
 `.gitattributes` hält die Zeilenenden auf beiden Systemen gleich. Ohne das würden die Shell-Skripte unter Windows nicht starten.
 
+## Sicherung
+
+Das PersonalOS wird in ein eigenes, **privates** GitHub-Repository gesichert, nie in diese Vorlage. Der Installationsprompt richtet das in Schritt 8 ein. Von Hand geht es so:
+
+1. Auf github.com ein neues, privates, leeres Repository anlegen (ohne README).
+2. Im Ordner PersonalOS: `git remote add origin <Adresse des neuen Repositorys>`
+3. `tools/sichern.sh` ausführen (Windows: in Git Bash). Die erste Sicherung legt die Verbindung an, danach holt jeder Lauf erst den Stand und pusht dann.
+4. Optional automatisch um 07:30 und 18:00: `tools/automatisch-sichern.sh an`
+
+Meldet das Skript „KONFLIKT“, wurde nichts überschrieben. Dann den Agenten bitten, den Unterschied zu zeigen und von Hand zusammenzuführen.
+
 ## Trainieren: so lernt das System dich kennen
 
 Nach dem Erststart weiß der Agent, wer du bist. Dein Fachwissen kommt erst mit der Arbeit dazu. Je mehr echtes Material durch das System läuft, desto besser werden Antworten und Vorschläge.
