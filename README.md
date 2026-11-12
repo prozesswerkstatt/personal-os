@@ -143,3 +143,5 @@ Update in einem Kunden-Vault: Systemdateien einzeln vergleichen und übernehmen,
 ## Herkunft und Lizenz
 
 Abgeleitet aus dem Second Brain der ProzessWerkstatt, im täglichen Einsatz seit Juni 2026. Die Vorlage enthält keine Inhalte und keine personenbezogenen Daten. Einzelne Ideen (Wahrheit mit genau einem Owner, Trennung von Quelle und übernommener Wahrheit, Call-Auswertung, Prüfung nach jeder Änderung, Skill-Routing) stammen aus der [PersonalOS-Boilerplate](https://github.com/vincentmumme/personalos-boilerplate) von Vincent Mumme, veröffentlicht unter MIT-Lizenz (Text in `LIZENZEN/personalos-boilerplate-MIT.txt`).
+
+Die Vorlage selbst steht unter [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.de) (Text in `LICENSE`): Du darfst sie frei nutzen, für dich und deine Firma anpassen und weitergeben, mit Nennung der Herkunft (ProzessWerkstatt). Nicht erlaubt ist, die Vorlage oder eine abgewandelte Fassung zu verkaufen oder als bezahlte Leistung anzubieten. Deine eigenen Notizen und Inhalte, die du im PersonalOS anlegst, gehören dir und fallen nicht unter diese Lizenz.

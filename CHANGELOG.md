@@ -2,6 +2,10 @@
 
 Nur Änderungen an der Vorlage selbst. Was in einem eingerichteten PersonalOS passiert, steht dort in den Daily Notes.
 
+## 0.3.2 · 2026-11-12
+
+- Lizenz: Die Vorlage steht unter Creative Commons BY-NC 4.0 (`LICENSE`). Nutzen und Anpassen erlaubt, Verkauf nicht. Eigene Inhalte im PersonalOS sind nicht betroffen. Der MIT-Text der Boilerplate in `LIZENZEN/` bleibt.
+
 ## 0.3.1 · 2026-11-12
 
 - `tools/sichern.sh`: Die erste Sicherung in das eigene GitHub-Repository klappt jetzt. Nach dem Klonen und `git remote rename origin vorlage` zeigte der Zweig noch auf die Vorlage, das Skript hätte von dort gezogen und dorthin pushen wollen und brach mit einer irreführenden Konflikt-Meldung ab. Jetzt wird bei der ersten Sicherung nach `origin` gepusht und `origin` als Upstream gesetzt.
